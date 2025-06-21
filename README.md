@@ -1,36 +1,163 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# React useContext Hook Demo 🎯
 
-## Getting Started
+A beautiful, interactive demonstration of React's useContext hook with multiple contexts, theme switching, user management, and cart functionality.
 
-First, run the development server:
+## 🚀 Live Demo
 
+**[View Live Demo →](https://use-context-poc.vercel.app)**
+
+## ✨ Features
+
+### 🎨 **Theme Context**
+- Dark/Light mode toggle
+- Instant theme switching across all components
+- Beautiful gradient backgrounds and smooth transitions
+
+### 👤 **User Context**
+- User authentication simulation
+- Notification system
+- Real-time user state management
+
+### 🛒 **Cart Context**
+- Add/remove products from cart
+- Quantity management
+- Real-time price calculations
+- Cart counter in header
+
+### 🔍 **Debug Panel**
+- Live context state visualization
+- Real-time value updates
+- Color-coded context sections
+- Educational "How it Works" section
+
+## 🎨 Design Features
+
+- **Modern UI** with Tailwind CSS
+- **Glass morphism** effects
+- **Gradient backgrounds** and buttons
+- **Smooth animations** and hover effects
+- **Responsive design** for all devices
+- **Beautiful typography** with custom fonts
+
+## 🛠️ Technologies Used
+
+- **Next.js 15** - React framework
+- **React 19** - JavaScript library
+- **Tailwind CSS v4** - Utility-first CSS framework
+- **useContext Hook** - React state management
+- **Vercel** - Deployment platform
+
+## 🏗️ Architecture
+
+### Context Structure
+```
+ThemeProvider
+├── UserProvider
+    ├── CartProvider
+        └── App Components
+```
+
+### Key Concepts Demonstrated
+- **No Prop Drilling** - State flows through context
+- **Multiple Contexts** - Theme, User, and Cart working together
+- **Custom Hooks** - `useTheme`, `useUser`, `useCart`
+- **Error Boundaries** - Proper context usage validation
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm, yarn, or pnpm
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/usecontextpoc.git
+cd usecontextpoc
+```
+
+2. **Install dependencies**
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. **Run the development server**
 ```bash
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **Open your browser**
+```
+http://localhost:3000
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── layout.js          # Root layout with fonts
+│   ├── page.js            # Main app component
+│   └── globals.css        # Global styles
+├── contexts/
+│   └── AppContexts.js     # All context providers
+└── components/
+    ├── Header.js          # Navigation header
+    ├── ProductCard.js     # Product display
+    ├── Cart.js            # Shopping cart
+    └── ContextInfo.js     # Debug panel
+```
 
-## Learn More
+## 🎯 How to Use
 
-To learn more about Next.js, take a look at the following resources:
+1. **Toggle Theme** - Click the moon/sun icon in the header
+2. **Login** - Click the "Login" button to see user state
+3. **Add to Cart** - Click "Add to Cart" on any product
+4. **Manage Cart** - Use +/- buttons to adjust quantities
+5. **Watch Debug Panel** - See real-time context state changes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Color Palette
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Theme Context**: Blue gradients (`from-blue-500 to-indigo-600`)
+- **User Context**: Green gradients (`from-green-500 to-emerald-600`)
+- **Cart Context**: Purple gradients (`from-purple-500 to-violet-600`)
+- **Background**: Glass morphism with backdrop blur
 
-## Deploy on Vercel
+## 📚 Learning Resources
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [React useContext Documentation](https://react.dev/reference/react/useContext)
+- [Next.js App Router](https://nextjs.org/docs/app)
+- [Tailwind CSS](https://tailwindcss.com)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚀 Deployment
+
+This project is deployed on Vercel. To deploy your own:
+
+1. **Push to GitHub**
+2. **Connect to Vercel**
+3. **Auto-deploy on every push**
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+**Built with ❤️ using React useContext Hook**
