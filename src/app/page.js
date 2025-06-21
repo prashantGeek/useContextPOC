@@ -117,57 +117,6 @@ const MainContent = () => {
             <ContextInfo />
           </div>
         </div>
-
-        {/* Instructions */}
-        <div className={`
-          mt-12 p-6 rounded-xl
-          ${theme === 'dark' 
-            ? 'bg-gray-800 border border-gray-700' 
-            : 'bg-white border border-gray-200'
-          }
-        `}>
-          <h3 className={`text-xl font-semibold mb-4 ${
-            theme === 'dark' ? 'text-white' : 'text-gray-900'
-          }`}>
-            🚀 Try These Features:
-          </h3>
-          <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 text-sm ${
-            theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-          }`}>
-            <div>
-              <h4 className="font-medium mb-2">Theme Context:</h4>
-              <ul className="space-y-1">
-                <li>• Toggle dark/light mode in header</li>
-                <li>• See theme change across all components</li>
-                <li>• No prop drilling needed!</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">User Context:</h4>
-              <ul className="space-y-1">
-                <li>• Click "Login" to see user state</li>
-                <li>• Notice notifications appear</li>
-                <li>• Click bell to clear notifications</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">Cart Context:</h4>
-              <ul className="space-y-1">
-                <li>• Add products to cart</li>
-                <li>• See cart count in header</li>
-                <li>• Manage quantities in sidebar</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">Context Debug:</h4>
-              <ul className="space-y-1">
-                <li>• Watch context values update</li>
-                <li>• See real-time state changes</li>
-                <li>• Learn how useContext works</li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </main>
     </div>
   );
