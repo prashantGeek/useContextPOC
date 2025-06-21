@@ -41,16 +41,17 @@ const Cart = () => {
       <div className="space-y-4 mb-6">
         {items.map((item) => (
           <div key={item.id} className={`
-            flex items-center justify-between p-4 rounded-lg
+            p-4 rounded-lg
             ${theme === 'dark' 
               ? 'bg-gray-700 border border-gray-600' 
               : 'bg-gray-50 border border-gray-200'
             }
           `}>
-            <div className="flex items-center space-x-4">
-              <span className="text-2xl">{item.emoji}</span>
-              <div>
-                <h4 className={`font-semibold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+            {/* Item Info Row */}
+            <div className="flex items-center space-x-4 mb-3">
+              <span className="text-2xl flex-shrink-0">{item.emoji}</span>
+              <div className="flex-grow min-w-0">
+                <h4 className={`font-semibold truncate ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                   {item.name}
                 </h4>
                 <p className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
@@ -59,13 +60,14 @@ const Cart = () => {
               </div>
             </div>
             
-            <div className="flex items-center space-x-4">
+            {/* Controls Row */}
+            <div className="flex items-center justify-between">
               {/* Quantity Controls */}
               <div className="flex items-center space-x-2">
                 <button
                   onClick={() => updateQuantity(item.id, item.quantity - 1)}
                   className={`
-                    w-8 h-8 rounded-full flex items-center justify-center
+                    w-8 h-8 rounded-full flex items-center justify-center transition-all
                     ${theme === 'dark' 
                       ? 'bg-gray-600 hover:bg-gray-500 text-white' 
                       : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
@@ -74,13 +76,13 @@ const Cart = () => {
                 >
                   -
                 </button>
-                <span className={`w-8 text-center font-medium ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                <span className={`w-10 text-center font-medium ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                   {item.quantity}
                 </span>
                 <button
                   onClick={() => updateQuantity(item.id, item.quantity + 1)}
                   className={`
-                    w-8 h-8 rounded-full flex items-center justify-center
+                    w-8 h-8 rounded-full flex items-center justify-center transition-all
                     ${theme === 'dark' 
                       ? 'bg-gray-600 hover:bg-gray-500 text-white' 
                       : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
@@ -91,19 +93,27 @@ const Cart = () => {
                 </button>
               </div>
               
-              {/* Item Total */}
-              <div className={`font-bold min-w-[60px] text-right ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                ${(item.price * item.quantity).toFixed(2)}
+              {/* Price and Remove */}
+              <div className="flex items-center space-x-3">
+                <div className={`font-bold text-lg ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                  ${(item.price * item.quantity).toFixed(2)}
+                </div>
+                
+                {/* Remove Button */}
+                <button
+                  onClick={() => removeItem(item.id)}
+                  className={`
+                    w-8 h-8 rounded-full flex items-center justify-center transition-all
+                    ${theme === 'dark' 
+                      ? 'bg-red-600 hover:bg-red-500 text-white' 
+                      : 'bg-red-100 hover:bg-red-200 text-red-600'
+                    }
+                  `}
+                  title="Remove item"
+                >
+                  🗑️
+                </button>
               </div>
-              
-              {/* Remove Button */}
-              <button
-                onClick={() => removeItem(item.id)}
-                className="text-red-500 hover:text-red-600 p-1"
-                title="Remove item"
-              >
-                🗑️
-              </button>
             </div>
           </div>
         ))}
